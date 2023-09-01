@@ -12,12 +12,18 @@
                "dest": "app.js"
           },
           {
-               "src": "/api/v1/(.*)",
-               "dest": "app.js"
+               "src": "/api/v1/tasks",
+               "dest": "./app.js"
           },
           {
-               "src": "/",
-               "dest": "app.js"
+               "src": "/api/v1/tasks/([a-zA-Z0-9-]+)",
+               "dest": "./app.js",
+               "methods": ["GET", "PATCH", "DELETE"]
+          },
+          {
+               "src": "/api/v1/tasks",
+               "dest": "./app.js",
+               "methods": ["POST"]
           }
      ]
 }
