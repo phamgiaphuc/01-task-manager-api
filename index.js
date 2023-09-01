@@ -27,9 +27,9 @@ app.use(errorHandlerMiddleware)
  */
 
 // start the app
-const start = async() => {
+const start = () => {
      try {
-          await connectToDB();
+          connectToDB();
           app.listen(port, console.log(`Server is listening on port ${port}...`));
      } catch(error) {
           console.log(error);
