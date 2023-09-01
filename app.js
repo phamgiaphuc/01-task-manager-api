@@ -7,9 +7,10 @@ const url = '/api/v1';
 const connectToDB = require('./database/connect');
 const notFound = require('./middleware/notFound');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+const path = require('path');
 
 // middleware
-app.use(express.static('./public'));
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(express.json()); // to get the req.body (data) in the route
 
 // routes
